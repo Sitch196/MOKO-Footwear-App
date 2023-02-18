@@ -3,7 +3,7 @@ import styled from "styled-components";
 function Navigation() {
   return (
     <HeaderSection>
-      <div>LOGO</div>
+      <Logo>LOGO</Logo>
       <nav>
         <Ul>
           <li>Home</li>
@@ -17,8 +17,13 @@ function Navigation() {
 }
 
 const HeaderSection = styled.div`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  justify-content: space-between;
+  background-color: #1e2a47;
+  justify-content: space-around;
   padding: 1.3rem;
 `;
 const Ul = styled.div`
@@ -26,6 +31,10 @@ const Ul = styled.div`
   gap: 1rem;
   li {
     list-style-type: none;
+    font-size: 1.4rem;
   }
+`;
+const Logo = styled.div`
+  font-size: 1.4rem;
 `;
 export default Navigation;

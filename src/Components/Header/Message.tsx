@@ -24,7 +24,12 @@ const Button = styled.button`
   width: 6rem;
   height: 2.5rem;
   background-color: whitesmoke;
+
+  @media (max-width: 700px) {
+    font-size: 0.8rem;
+  }
   border: none;
+  font-weight: bold;
   cursor: pointer;
   border-radius: 2rem;
 `;
