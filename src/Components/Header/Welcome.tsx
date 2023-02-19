@@ -14,9 +14,11 @@ function Welcome() {
 export default Welcome;
 const LowerContentContainer = styled.div`
   /* border: 1px solid black; */
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-color: #1e2a47;
+  color: whitesmoke;
 
   @media (max-width: 650px) {
     display: flex;

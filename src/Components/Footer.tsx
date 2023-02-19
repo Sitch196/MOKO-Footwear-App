@@ -14,8 +14,8 @@ function Footer() {
 export default Footer;
 const FooterContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  background-color: whitesmoke;
+  justify-content: space-evenly;
+  background-color: #dadada;
 
   @media (max-width: 650px) {
     display: flex;

@@ -39,8 +39,8 @@ const CategoriesContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  padding: 5rem;
-  gap: 4rem;
+  padding: 5rem 0;
+  gap: 2rem;
 
   @media (max-width: 450px) {
     font-size: 90%;

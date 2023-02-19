@@ -4,7 +4,9 @@ function Message() {
   return (
     <TextContainer>
       <h1>The Easiest way to to Look Good</h1>
-      <h4>Change you style with MOKO</h4>
+      <h4>
+        Change you style with M<OkaySpan>OK</OkaySpan>O{" "}
+      </h4>
       <Button>Get Started</Button>
       <h6>30-day money back guarantee</h6>
     </TextContainer>
@@ -12,6 +14,10 @@ function Message() {
 }
 
 export default Message;
+
+const OkaySpan = styled.span`
+  color: red;
+`;
 const TextContainer = styled.div`
   width: 50%;
   display: flex;
@@ -25,8 +31,11 @@ const Button = styled.button`
   height: 2.5rem;
   background-color: whitesmoke;
 
+  @media (max-width: 800px) {
+    font-size: 90%;
+  }
   @media (max-width: 700px) {
-    font-size: 0.8rem;
+    font-size: 80%;
   }
   border: none;
   font-weight: bold;

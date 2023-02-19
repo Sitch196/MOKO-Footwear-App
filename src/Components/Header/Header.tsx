@@ -14,7 +14,7 @@ function Header() {
   );
 }
 
-export default Header;
+// export default Header;
 const HeaderContainer = styled.div`
   background-color: #1e2a47;
   color: whitesmoke;
