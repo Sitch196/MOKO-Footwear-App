@@ -2,18 +2,21 @@ import styled from "styled-components";
 
 const dummyData = [
   {
+    id: 1,
     brand: "Nike Men's Air Monarch IV",
     size: "42",
     price: "$75.99",
     img_url: "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UL320_.jpg",
   },
   {
+    id: 2,
     brand: "adidas Men's Runfalcon",
     size: "44",
     price: "$125.99",
     img_url: "https://m.media-amazon.com/images/I/71efu9jBa8L._AC_UL320_.jpg",
   },
   {
+    id: 3,
     brand: "Reebok Work Men's Dayod",
     size: "41",
     price: "$95.99",
@@ -21,12 +24,12 @@ const dummyData = [
   },
 ];
 
-function MensPage() {
+function MenPage() {
   return (
     <Container>
       <ContainerDiv>
-        {dummyData.map((shoe, index) => (
-          <EachShoe key={index}>
+        {dummyData.map((shoe) => (
+          <EachShoe key={shoe.id}>
             <p>{shoe.brand}</p>
             <Shoe src={shoe.img_url} alt="shoe" />
             <p>Size: {shoe.size}</p>
@@ -41,6 +44,8 @@ function MensPage() {
 
 const Shoe = styled.img`
   width: 12rem;
+  aspect-ratio: 3/2;
+  object-fit: contain;
   @media (width < 450px) {
     width: 7rem;
   }
@@ -68,14 +73,16 @@ const EachShoe = styled.div`
 `;
 const ContainerDiv = styled.div`
   /* border: 1px solid green; */
-  height: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 `;
 const Container = styled.div`
-  padding: 2rem 0;
+  padding: 3.5rem 0;
   width: 100%;
   height: 30rem;
+  padding-bottom: 2rem;
+  background-color: whitesmoke;
 `;
-export default MensPage;
+export default MenPage;

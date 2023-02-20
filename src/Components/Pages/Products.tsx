@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Sneakers = {
-  brand: "Nike",
-};
-
 function Products() {
   return (
     <Container>
@@ -32,7 +28,6 @@ const CategoryContainer = styled.div`
   justify-content: center;
 `;
 const EachCategory = styled.div`
-  /* border: 1px solid whitesmoke; */
   font-size: 3.5rem;
   display: flex;
   align-items: center;

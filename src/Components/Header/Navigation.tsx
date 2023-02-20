@@ -18,16 +18,23 @@ function Navigation() {
             <StyledLink to="products">Products</StyledLink>
           </li>
           <li>
-            <StyledLink to="about">About</StyledLink>
+            <StyledLink to="about">Reviews</StyledLink>
           </li>
           <li>
-            <StyledLink to="contact">Contact</StyledLink>{" "}
+            <StyledLink to="cart">Cart</StyledLink>{" "}
           </li>
         </Ul>
       </nav>
     </HeaderSection>
   );
 }
+// const Cart = styled(Link)`
+//   /* border: 1px solid red; */
+//   /* padding: 0 1.5rem; */
+//   border-radius: 10px;
+//   color: red;
+// `;
+
 const StyleLink = styled(Link)`
   text-decoration: none;
   color: whitesmoke;
@@ -57,10 +64,16 @@ const Ul = styled.div`
     list-style-type: none;
     font-size: 1.4rem;
     cursor: pointer;
+    @media (width > 768px) {
+      font-size: 2rem;
+    }
   }
 `;
 const Logo = styled.div`
   font-size: 1.4rem;
   font-weight: bold;
+  @media (width > 768px) {
+    font-size: 2rem;
+  }
 `;
 export default Navigation;

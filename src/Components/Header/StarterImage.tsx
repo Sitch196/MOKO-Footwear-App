@@ -3,7 +3,10 @@ import styled from "styled-components";
 function StarterImage() {
   return (
     <div>
-      <ImageContainer src="../../../Images/sneaker.png" alt="sneaker" />
+      <ImageContainer
+        src="http://clipart-library.com/images_k/shoe-transparent-background/shoe-transparent-background-22.png"
+        alt="sneaker"
+      />
     </div>
   );
 }

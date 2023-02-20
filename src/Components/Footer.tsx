@@ -14,6 +14,7 @@ function Footer() {
 export default Footer;
 const FooterContainer = styled.div`
   display: flex;
+  height: 100%;
   justify-content: space-evenly;
   background-color: #dadada;
 
