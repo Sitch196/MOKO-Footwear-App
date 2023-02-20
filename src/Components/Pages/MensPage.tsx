@@ -1,3 +1,4 @@
+import { Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const dummyData = [
@@ -25,8 +26,14 @@ const dummyData = [
 ];
 
 function MenPage() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    return navigate("/products");
+  };
   return (
     <Container>
+      <BackBtn onClick={handleClick}>&#8592;</BackBtn>
       <ContainerDiv>
         {dummyData.map((shoe) => (
           <EachShoe key={shoe.id}>
@@ -41,6 +48,13 @@ function MenPage() {
     </Container>
   );
 }
+const BackBtn = styled.button`
+  margin-left: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  cursor: pointer;
+`;
 
 const Shoe = styled.img`
   width: 12rem;
@@ -48,6 +62,11 @@ const Shoe = styled.img`
   object-fit: contain;
   @media (width < 450px) {
     width: 7rem;
+  }
+  transition: 0.5s;
+
+  &:hover {
+    width: 14rem;
   }
 `;
 const Button = styled.button`
@@ -77,12 +96,13 @@ const ContainerDiv = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding: 3rem 0;
 `;
 const Container = styled.div`
   padding: 3.5rem 0;
   width: 100%;
   height: 30rem;
   padding-bottom: 2rem;
-  background-color: whitesmoke;
+  background-color: white;
 `;
 export default MenPage;

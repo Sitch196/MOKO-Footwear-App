@@ -20,6 +20,7 @@ function Products() {
 }
 
 export default Products;
+
 const CategoryContainer = styled.div`
   border: 1px solid whitesmoke;
   height: 100%;
