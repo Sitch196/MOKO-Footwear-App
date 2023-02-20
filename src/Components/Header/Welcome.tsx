@@ -14,7 +14,7 @@ function Welcome() {
 export default Welcome;
 const LowerContentContainer = styled.div`
   /* border: 1px solid black; */
-  padding-top: 2rem;
+  padding: 2rem 0;
   display: flex;
   justify-content: space-around;
   background-color: #1e2a47;

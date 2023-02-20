@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import image from "./sneaker.png";
 function StarterImage() {
   return (
     <div>
-      <ImageContainer src={image} alt="sneaker" />
+      <ImageContainer
+        src="https://freepngimg.com/thumb/shoes/3-2-shoes-transparent.png"
+        alt="sneaker"
+      />
     </div>
   );
 }
