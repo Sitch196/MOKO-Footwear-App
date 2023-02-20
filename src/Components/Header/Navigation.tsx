@@ -4,9 +4,11 @@ import styled from "styled-components";
 function Navigation() {
   return (
     <HeaderSection>
-      <Logo>
-        M<OkaySpan>OK</OkaySpan>O
-      </Logo>
+      <StyleLink to="/">
+        <Logo>
+          M<OkaySpan>OK</OkaySpan>O
+        </Logo>
+      </StyleLink>
       <nav>
         <Ul>
           <li>
@@ -26,6 +28,10 @@ function Navigation() {
     </HeaderSection>
   );
 }
+const StyleLink = styled(Link)`
+  text-decoration: none;
+  color: whitesmoke;
+`;
 const OkaySpan = styled.span`
   color: red;
 `;

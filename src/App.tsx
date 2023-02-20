@@ -8,6 +8,9 @@ import Welcome from "./Components/Header/Welcome";
 import Products from "./Components/Pages/Products";
 import About from "./Components/Pages/About";
 import Contact from "./Components/Pages/Contact";
+import KidsPage from "./Components/Pages/KidsPage";
+import MensPage from "./Components/Pages/MensPage";
+import WomanPage from "./Components/Pages/Womanpage";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -25,7 +28,12 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Welcome />} />
-        <Route path="products" element={<Products />} />
+        <Route path="products">
+          <Route index={true} element={<Products />} />
+          <Route path="men" element={<MensPage />} />
+          <Route path="woman" element={<WomanPage />} />
+          <Route path="kids" element={<KidsPage />} />
+        </Route>
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
       </Routes>
