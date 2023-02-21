@@ -1,7 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import Checkout from "./Checkout";
 
 function Navigation() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleCheckout = function () {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <HeaderSection>
       <StyleLink to="/">
@@ -20,20 +28,21 @@ function Navigation() {
           <li>
             <StyledLink to="about">Reviews</StyledLink>
           </li>
-          <li>
-            <StyledLink to="cart">Cart</StyledLink>{" "}
-          </li>
+          <CartBtn onClick={toggleCheckout}>Cart</CartBtn>
+          {isVisible && <Checkout onClick={toggleCheckout} />}
         </Ul>
       </nav>
     </HeaderSection>
   );
 }
-// const Cart = styled(Link)`
-//   /* border: 1px solid red; */
-//   /* padding: 0 1.5rem; */
-//   border-radius: 10px;
-//   color: red;
-// `;
+const CartBtn = styled.li`
+  border: 2px solid black;
+  outline: 1px solid whitesmoke;
+  padding: 0 1.5rem;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  color: black;
+`;
 
 const StyleLink = styled(Link)`
   text-decoration: none;
@@ -47,10 +56,6 @@ const StyledLink = styled(Link)`
   color: whitesmoke;
 `;
 const HeaderSection = styled.div`
-  /* width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0; */
   display: flex;
   background-color: #1e2a47;
   justify-content: space-around;

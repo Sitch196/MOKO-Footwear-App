@@ -26,6 +26,7 @@ function App() {
     <div>
       <GlobalStyle />
       <Navigation />
+
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="products">

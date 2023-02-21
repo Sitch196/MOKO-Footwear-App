@@ -39,7 +39,7 @@ function WomanPage() {
             <Shoe src={shoe.img_url} alt="shoe" />
             <p>Size: {shoe.size}</p>
             <p>{shoe.price}</p>
-            <Button>ADD</Button>
+            <Button>Add To Cart</Button>
           </EachShoe>
         ))}
       </ContainerDiv>
@@ -67,14 +67,15 @@ const Shoe = styled.img`
   }
 `;
 const Button = styled.button`
-  background: none;
+  background-color: #1e2a47;
+  color: whitesmoke;
   border: 1px solid black;
   border-radius: 5px;
   padding: 0.4rem;
   cursor: pointer;
 `;
 const EachShoe = styled.div`
-  /* border: 1px solid red; */
+  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +83,7 @@ const EachShoe = styled.div`
   justify-content: center;
   width: 30%;
   height: 50%;
-  padding: 1.5rem 0.5rem;
+  padding: 2.5rem 0.5rem;
   text-align: center;
   cursor: pointer;
   transition: 0.4s;

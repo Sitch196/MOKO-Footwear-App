@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function Message() {
@@ -7,14 +8,19 @@ function Message() {
       <h4>
         Change you style with M<OkaySpan>OK</OkaySpan>O{" "}
       </h4>
-      <Button>Get Started</Button>
+      <Button>
+        <StyledLink to="products">Get Started</StyledLink>
+      </Button>
       <h6>30-day money back guarantee</h6>
     </TextContainer>
   );
 }
 
 export default Message;
-
+const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+`;
 const OkaySpan = styled.span`
   color: red;
 `;
