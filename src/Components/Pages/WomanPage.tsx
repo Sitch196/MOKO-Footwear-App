@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { CartContext } from "../../Context/MenContext";
 const dummyData = [
   {
     id: 1,
@@ -23,12 +25,29 @@ const dummyData = [
     img_url: "https://m.media-amazon.com/images/I/51WcYHvpPBL._AC_UL320_.jpg",
   },
 ];
+
+interface Shoe {
+  id: number;
+  brand: string;
+  img_url: string;
+  size: string;
+  price: string;
+}
+
 function WomanPage() {
   const navigate = useNavigate();
+
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = (shoe: Shoe) => {
+    console.log(shoe);
+    addToCart(shoe);
+  };
 
   const handleClick = () => {
     return navigate("/products");
   };
+
   return (
     <Container>
       <BackBtn onClick={handleClick}>&#8592;</BackBtn>
@@ -39,13 +58,14 @@ function WomanPage() {
             <Shoe src={shoe.img_url} alt="shoe" />
             <p>Size: {shoe.size}</p>
             <p>{shoe.price}</p>
-            <Button>Add To Cart</Button>
+            <Button onClick={() => handleAddToCart(shoe)}>Add To Cart</Button>
           </EachShoe>
         ))}
       </ContainerDiv>
     </Container>
   );
 }
+
 const BackBtn = styled.button`
   margin-left: 1rem;
   padding: 0.5rem 2rem;

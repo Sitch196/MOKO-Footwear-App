@@ -7,23 +7,32 @@ import Navigation from "./Components/Header/Navigation";
 import Welcome from "./Components/Header/Welcome";
 import Products from "./Components/Pages/Products";
 import About from "./Components/Pages/About";
-import Contact from "./Components/Pages/Contact";
+import Contact from "./Components/Pages/Cart";
 import KidsPage from "./Components/Pages/KidsPage";
 import MensPage from "./Components/Pages/MensPage";
-import WomanPage from "./Components/Pages/Womanpage";
+import WomanPage from "./Components/Pages/WomanPage";
+import Cart from "./Components/Pages/Cart";
+import { useState } from "react";
+import { CartProvider } from "./Context/MenContext";
 
 const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    padding:0;
-    font-family: poppins;
-    
-    
-  }
-`;
+    * {
+      margin: 0;
+      padding:0;
+      font-family: poppins;
+      
+      
+    }
+  `;
+
 function App() {
+  const [cartItems, setCartItems] = useState<any>([]);
+
+  const addToCart = (item: any) => {
+    setCartItems([...cartItems, item]);
+  };
   return (
-    <div>
+    <CartProvider>
       <GlobalStyle />
       <Navigation />
 
@@ -36,10 +45,10 @@ function App() {
           <Route path="kids" element={<KidsPage />} />
         </Route>
         <Route path="about" element={<About />} />
-        <Route path="cart" element={<Contact />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
       <Footer />
-    </div>
+    </CartProvider>
   );
 }
 

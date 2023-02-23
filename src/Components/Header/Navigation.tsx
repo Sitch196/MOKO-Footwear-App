@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import Checkout from "./Checkout";
 
 function Navigation() {
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  const toggleCheckout = function () {
-    setIsVisible(!isVisible);
-  };
+  // const toggleCheckout = function () {
+  //   setIsVisible(!isVisible);
+  // };
 
   return (
     <HeaderSection>
@@ -28,19 +27,21 @@ function Navigation() {
           <li>
             <StyledLink to="about">Reviews</StyledLink>
           </li>
-          <CartBtn onClick={toggleCheckout}>Cart</CartBtn>
-          {isVisible && <Checkout onClick={toggleCheckout} />}
+          <li>
+            <CartBtn to="cart">Cart</CartBtn>
+          </li>
         </Ul>
       </nav>
     </HeaderSection>
   );
 }
-const CartBtn = styled.li`
+const CartBtn = styled(Link)`
   border: 2px solid black;
   outline: 1px solid whitesmoke;
   padding: 0 1.5rem;
   border-radius: 15px;
   background-color: whitesmoke;
+  text-decoration: none;
   color: black;
 `;
 
