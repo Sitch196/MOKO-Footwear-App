@@ -44,6 +44,9 @@ function Cart() {
         ) : (
           <OrderShipped />
         )}
+        {cartItems.length === 0 && !isOrdered && (
+          <p style={{ color: "red" }}>Cart Is Empty</p>
+        )}
         <SubTotal>Total: ${subTotal.toFixed(2)}</SubTotal>
       </ShoeContainer>
 
