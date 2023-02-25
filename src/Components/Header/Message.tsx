@@ -20,6 +20,9 @@ export default Message;
 const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
+  @media (width <700px) {
+    font-size: 0.8rem;
+  }
 `;
 const OkaySpan = styled.span`
   color: red;

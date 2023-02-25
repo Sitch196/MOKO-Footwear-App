@@ -8,22 +8,43 @@ const dummyData = [
     id: 1,
     brand: "Nike Men's Air Monarch IV",
     size: "42",
-    price: "$75.99",
+    price: 75.99,
     img_url: "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UL320_.jpg",
   },
   {
     id: 2,
     brand: "adidas Men's Runfalcon",
     size: "44",
-    price: "$125.99",
+    price: 125.99,
     img_url: "https://m.media-amazon.com/images/I/71efu9jBa8L._AC_UL320_.jpg",
   },
   {
     id: 3,
     brand: "Reebok Work Men's Dayod",
     size: "41",
-    price: "$95.99",
+    price: 95.99,
     img_url: "https://m.media-amazon.com/images/I/61XK0PK0WGL._AC_UL320_.jpg",
+  },
+  {
+    id: 4,
+    brand: "ASICS Men's Gel-Dedicate 7 ",
+    size: "41",
+    price: 55.99,
+    img_url: "https://m.media-amazon.com/images/I/51iM7O0MiiL._AC_UL400_.jpg",
+  },
+  {
+    id: 5,
+    brand: "New Balance Men's 608 V5",
+    size: "43",
+    price: 65.99,
+    img_url: "https://m.media-amazon.com/images/I/71I2Hf4x0SL._AC_UL400_.jpg",
+  },
+  {
+    id: 6,
+    brand: "Men's Jordan 3 Retro Fire Red",
+    size: "42",
+    price: 295.99,
+    img_url: "https://m.media-amazon.com/images/I/51i4heK0gmL._AC_UL400_.jpg",
   },
 ];
 interface Shoe {
@@ -51,12 +72,12 @@ function MenPage() {
     <Container>
       <BackBtn onClick={handleClick}>&#8592;</BackBtn>
       <ContainerDiv>
-        {dummyData.map((shoe) => (
+        {dummyData.map((shoe: any) => (
           <EachShoe key={shoe.id}>
             <p>{shoe.brand}</p>
             <Shoe src={shoe.img_url} alt="shoe" />
             <p>Size: {shoe.size}</p>
-            <p>{shoe.price}</p>
+            <p>${shoe.price}</p>
             <Button onClick={() => handleAddToCart(shoe)}>Add To Cart</Button>
           </EachShoe>
         ))}
@@ -119,7 +140,7 @@ const ContainerDiv = styled.div`
 const Container = styled.div`
   padding: 3.5rem 0;
   width: 100%;
-  height: 30rem;
+  /* height: 30rem; */
   padding-bottom: 2rem;
   background-color: white;
 `;

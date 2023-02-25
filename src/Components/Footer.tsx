@@ -17,6 +17,7 @@ const FooterContainer = styled.div`
   height: 100%;
   justify-content: space-evenly;
   background-color: #dadada;
+  overflow: hidden;
 
   @media (max-width: 650px) {
     display: flex;

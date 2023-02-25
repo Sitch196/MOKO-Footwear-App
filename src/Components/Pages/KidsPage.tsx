@@ -8,25 +8,46 @@ const dummyData = [
     id: 1,
     brand: "Skechers Unisex-Child Boys",
     size: "22",
-    price: "$35.99",
+    price: 35.99,
     img_url: "https://m.media-amazon.com/images/I/61aCxbzvZ-L._AC_UL320_.jpg",
   },
   {
     id: 2,
     brand: "adidas Unisex-Child Racer",
     size: "24",
-    price: "$45.99",
+    price: 45.99,
     img_url: "https://m.media-amazon.com/images/I/71fg8VWoRbL._AC_UL320_.jpg",
   },
   {
     id: 3,
     brand: "Jordan Youth Air 5 Retro GS",
     size: "23",
-    price: "$195.99",
+    price: 195.99,
     img_url: "https://m.media-amazon.com/images/I/61sxD0N0OFL._AC_UL320_.jpg",
   },
+  {
+    id: 4,
+    brand: "Skechers Boy's Sport Lighted ",
+    size: "20",
+    price: 45.99,
+    img_url: "https://m.media-amazon.com/images/I/71PB70IgwuL._AC_UL400_.jpg",
+  },
+  {
+    id: 5,
+    brand: "Big Kid's Jordan 13 Retro Court",
+    size: "23",
+    price: 33.99,
+    img_url: "https://m.media-amazon.com/images/I/717In4PrcYL._AC_UL400_.jpg",
+  },
+  {
+    id: 6,
+    brand: "adidas Kid's RapidaRun ATR BTWS",
+    size: "22",
+    price: 61.99,
+    img_url: "https://m.media-amazon.com/images/I/51iZHLRFt2L._AC_UL400_.jpg",
+  },
 ];
-interface Shoe {
+interface Item {
   id: number;
   brand: string;
   img_url: string;
@@ -37,7 +58,7 @@ function KidsPage() {
   const navigate = useNavigate();
 
   const { addToCart } = useContext(CartContext);
-  const handleAddToCart = function (shoe: Shoe) {
+  const handleAddToCart = function (shoe: Item) {
     console.log(shoe);
     addToCart(shoe);
   };
@@ -48,12 +69,12 @@ function KidsPage() {
     <Container>
       <BackBtn onClick={handleClick}>&#8592;</BackBtn>
       <ContainerDiv>
-        {dummyData.map((shoe) => (
+        {dummyData.map((shoe: any) => (
           <EachShoe key={shoe.id}>
             <p>{shoe.brand}</p>
             <Shoe src={shoe.img_url} alt="shoe" />
             <p>Size: {shoe.size}</p>
-            <p>{shoe.price}</p>
+            <p>${shoe.price}</p>
             <Button onClick={() => handleAddToCart(shoe)}>Add To Cart</Button>
           </EachShoe>
         ))}
@@ -115,7 +136,6 @@ const ContainerDiv = styled.div`
 const Container = styled.div`
   padding: 3.5rem 0;
   width: 100%;
-  height: 30rem;
   background-color: white;
   padding-bottom: 2rem;
 `;

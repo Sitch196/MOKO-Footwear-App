@@ -7,22 +7,43 @@ const dummyData = [
     id: 1,
     brand: "Nike Women's Basketball Shoe",
     size: "38",
-    price: "$105.99",
+    price: 105.99,
     img_url: "https://m.media-amazon.com/images/I/7177kgFneVL._AC_UL320_.jpg",
   },
   {
     id: 2,
     brand: "adidas Women's Fluidflow 2.0",
     size: "36",
-    price: "$85.99",
+    price: 85.99,
     img_url: "https://m.media-amazon.com/images/I/71pD4eeSRyS._AC_UL320_.jpg",
   },
   {
     id: 3,
     brand: "Reebok Women's Walk Ultra 7",
     size: "37",
-    price: "$195.99",
+    price: 195.99,
     img_url: "https://m.media-amazon.com/images/I/51WcYHvpPBL._AC_UL320_.jpg",
+  },
+  {
+    id: 4,
+    brand: "Under Armour Women's Charged",
+    size: "37",
+    price: 395.99,
+    img_url: "https://m.media-amazon.com/images/I/51PgLKADR9L._AC_UL400_.jpg",
+  },
+  {
+    id: 5,
+    brand: "Ryka Women's Hydro Sport",
+    size: "37",
+    price: 75.99,
+    img_url: "https://m.media-amazon.com/images/I/719n2Za4lPL._AC_UL400_.jpg",
+  },
+  {
+    id: 6,
+    brand: "Ryka Women's Hydro Sport7",
+    size: "35",
+    price: 125.99,
+    img_url: "https://m.media-amazon.com/images/I/81dSNiOtMhL._AC_UL400_.jpg",
   },
 ];
 
@@ -52,12 +73,12 @@ function WomanPage() {
     <Container>
       <BackBtn onClick={handleClick}>&#8592;</BackBtn>
       <ContainerDiv>
-        {dummyData.map((shoe) => (
+        {dummyData.map((shoe: any) => (
           <EachShoe key={shoe.id}>
             <p>{shoe.brand}</p>
             <Shoe src={shoe.img_url} alt="shoe" />
             <p>Size: {shoe.size}</p>
-            <p>{shoe.price}</p>
+            <p>${shoe.price}</p>
             <Button onClick={() => handleAddToCart(shoe)}>Add To Cart</Button>
           </EachShoe>
         ))}
@@ -113,11 +134,11 @@ const ContainerDiv = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
 `;
 const Container = styled.div`
   padding: 2rem 0;
   width: 100%;
-  height: 30rem;
 `;
 export default WomanPage;

@@ -6,21 +6,25 @@ interface Item {
   id: number;
   brand: string;
   img_url: string;
-  size: number;
-  price: number;
+  size: string;
+  price: string;
 }
-
+interface incre {
+  item: Number;
+}
 interface ContextType {
   cartItems: Item[];
   addToCart: (item: Item) => void;
+  setCartItems: (items: Item[]) => void;
 }
 
 export const CartContext = createContext<ContextType>({
   cartItems: [],
   addToCart: () => {},
+  setCartItems: () => {},
 });
 
-export const CartProvider: React.FC = ({ children }: any) => {
+export const CartProvider: any = ({ children }: any) => {
   const [cartItems, setCartItems] = useState<Item[]>([]);
 
   const addToCart = (item: Item) => {
@@ -28,7 +32,7 @@ export const CartProvider: React.FC = ({ children }: any) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, setCartItems }}>
       {children}
     </CartContext.Provider>
   );

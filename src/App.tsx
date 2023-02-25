@@ -7,7 +7,7 @@ import Navigation from "./Components/Header/Navigation";
 import Welcome from "./Components/Header/Welcome";
 import Products from "./Components/Pages/Products";
 import About from "./Components/Pages/About";
-import Contact from "./Components/Pages/Cart";
+// import Contact from "./Components/Pages/Cart";
 import KidsPage from "./Components/Pages/KidsPage";
 import MensPage from "./Components/Pages/MensPage";
 import WomanPage from "./Components/Pages/WomanPage";
@@ -26,11 +26,6 @@ const GlobalStyle = createGlobalStyle`
   `;
 
 function App() {
-  const [cartItems, setCartItems] = useState<any>([]);
-
-  const addToCart = (item: any) => {
-    setCartItems([...cartItems, item]);
-  };
   return (
     <CartProvider>
       <GlobalStyle />
